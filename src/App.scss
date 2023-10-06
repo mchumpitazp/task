@@ -1,19 +1,11 @@
-body {
+html, body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  overflow-x: hidden;
 }
 
 //Variables
 $myblue: #002DDB;
+$mypurple: #9487FB;
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 
@@ -28,22 +20,69 @@ $myblue: #002DDB;
 .font-secondary { font-family: 'Montserrat', sans-serif; }
 
 #root {
+  background-color: rgba($color: white, $alpha: 0.5);
+  width: 100%;
   background-image: url('../public/assets/background.jpg');
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center -150px;
+  background-clip: content-box;
 }
 
-.navbar {
+#header {
   position: absolute;
   width: 100%;
 
-  .btn-sm {
-    border-radius: 15px
+  .navbar-brand {
+    position: absolute;
+    padding: 2rem !important;
+    top: 0;
+    left: 0;
+  }
+  .nav-item { font-size: 18px; }
+  .navbar-toggler { border: none; }
+
+  #header-btns {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 0;
+  }
+
+  #header-btn {
+    font-size: 20px;
+    width: 264px;
+    height: 61px;
+    border: 1px $mypurple solid;
+    background-color: transparent;
+    border-radius: 10px;
+    color: black;
+  }
+
+  #header-btn:hover {
+    color: white;
+    background-color: $mypurple;
+  }
+
+  .header-btn-sm {
+    font-size: 14px;
+    color: rgba($color: black, $alpha: 0.5);
+    width: 55px;
+    height: 31px;
+    border: 1px rgba($color: black, $alpha: 0.5) solid;
+    border-radius: 20px;
+    background-color: transparent;
+    padding: auto;
+  }
+
+  .header-btn-sm:hover {
+    color: $mypurple;
   }
 }
 
-#hero {
+#hero {  
   height: 100vh;
   width: 100vw;
+  margin-bottom: 10rem;
 
   #hero-container {
     height: 100%;
@@ -51,17 +90,32 @@ $myblue: #002DDB;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 65%;
-    margin: auto;
-
+    
     #hero-title {
-      font-size: 3vw;
+      width: 70%;
+      font-size: 60px;
+      line-height: 78px;
+    }
+
+    #hero-text {
+      width: 60%;
+      font-size: 28px;
+      line-height: 34px;
     }
 
     #hero-btn {
       background-color: $myblue;
       border-color: $myblue;
       font-weight: 500;
+      font-size: 28px;
+      width: 369px;
+      height: 88px;
+    }
+
+    #hero-btn:hover {
+      background-color: white;
+      border-color: $myblue;
+      color: #1A1D3C;
     }
   }
 }
@@ -69,24 +123,100 @@ $myblue: #002DDB;
 #about {
   background-image: linear-gradient(transparent, white 40%);
   #about-title { font-size: 2.7vw; }
+
+  .about-cards {
+    background-color: white;
+    padding: 4rem 3rem;
+    box-shadow: 0px 0px 1px 1px rgba($color: black, $alpha: 0.05);
+  }
 }
 
-
-@media (max-width: 922px) {
-  #root {
-    background-size: 1080px;
-    background-position: top;
+@media (max-width: 1365px) {
+  #header {
+    #header-btn {
+      font-size: 20px;
+      width: 220px;
+      height: 61px;
+    }
   }
 
   #hero {
-    height: fit-content;
-    padding-top: 10rem;
-    padding-bottom: 5rem;
-    #hero-container { width: 100%; }
-    #hero-title { font-size: 1.8rem !important; }
+    #hero-title { 
+      font-size: 50px !important;
+      line-height: 60px !important;
+    }
+
+    #hero-text {
+      font-size: 22px !important;
+      line-height: 27px !important;
+    }
+
+    #hero-btn { 
+      font-size: 22px !important;
+      width: 340px !important;
+      height: 78px !important;
+    }
+  }
+  
+  #about {
+    #about-title {
+      font-size: 40px;
+      line-height: 48px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  #root {
+    background-position: 70% top;
+  }
+
+  #hero {
+    #hero-title { width: 100% !important; }
+    #hero-text { width: 100% !important; }
+  }
+}
+
+@media (max-width: 767px) {
+  #root {
+    background-position: center -200px;
+  }
+
+  #header {
+    #header-btn {
+      font-size: 14px;
+      width: 159px;
+      height: 50px;
+    }
+
+    .header-btn-sm {
+      font-size: 10px;
+      width: 36px;
+      height: 22px;
+      padding: 0;
+    }
+  }
+
+  #hero {
+    #hero-title { 
+      font-size: 30px !important;
+      line-height: 36px !important; 
+    }
+    #hero-text { 
+      font-size: 18px !important;
+      line-height: 22px !important; }
+
+    #hero-btn {
+      font-size: 18px !important;
+      width: 328px !important;
+    }
   }
 
   #about {
-    #about-title { font-size: 1.5rem; }
+    #about-title {
+      font-size: 23px !important;
+      line-height: 28px !important;
+    }
   }
+  
 }

@@ -1,6 +1,6 @@
-import About from "./AboutComponent";
-import Header from "./HeaderComponent";
-import Hero from "./HeroComponent";
+import About from "./About";
+import Header from "./Header";
+import Hero from "./Hero";
 
 function Main () {
     return (

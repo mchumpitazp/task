@@ -6,43 +6,46 @@ function Header() {
     const toggle = () => setIsOpen(!isOpen);
 
     return (
-        <Navbar expand="lg" className="font-secondary px-2 py-4">
-            <NavbarBrand href="/" className="font-primary">
+        <Navbar id="header" expand="xl" className="font-secondary p-4">
+            <NavbarBrand href="/" className="font-primary p-4">
                 <small><small>APPNWEB.DEV</small></small>
             </NavbarBrand>
 
-            <Button color="outline-secondary btn-sm px-3 py-1 ms-auto d-block d-lg-none">
-                <small>RU</small>
+            <Button className="header-btn-sm d-block d-xl-none ms-auto me-4">
+                RU
             </Button>
             
-            <NavbarToggler onClick={toggle} className="ms-3"/>
+            <NavbarToggler onClick={toggle} />
+
             <Collapse isOpen={isOpen} navbar>
                 <Nav navbar className="mx-auto">
-                    <NavItem className="m-2">
+                    <NavItem className="m-3">
                         <small>О нас</small>
                     </NavItem>
-                    <NavItem className="m-2">
+                    <NavItem className="m-3">
                         <small>Услуги</small>
                     </NavItem>
-                    <NavItem className="m-2">
+                    <NavItem className="m-3">
                         <small>Работы</small>
                     </NavItem>
-                    <NavItem className="m-2">
+                    <NavItem className="m-3">
                         <small>Отзывы</small>
                     </NavItem>
-                    <NavItem className="m-2">
+                    <NavItem className="m-3">
                         <small>Контакты</small>
                     </NavItem>
                 </Nav>
             </Collapse>
 
-            <Button color="outline-secondary btn-sm px-3 py-1 me-3 d-none d-lg-block">
-                <small>RU</small>
-            </Button>
+            <div id="header-btns" className="pe-4">
+                <Button className="header-btn-sm d-none d-xl-block ms-auto me-4">
+                    RU
+                </Button>
 
-            <Button color="outline-dark px-4 py-2" className="d-none d-lg-block">
-                <small>Заказать звонок</small>
-            </Button>
+                <Button id="header-btn" className="d-none d-xl-block">
+                    <small>Заказать звонок</small>
+                </Button>
+            </div>
         </Navbar>
     )
 }
