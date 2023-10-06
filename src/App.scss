@@ -12,3 +12,81 @@ code {
     monospace;
 }
 
+//Variables
+$myblue: #002DDB;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+@font-face {
+  font-family: 'Annonce';
+  font-weight: normal;
+  font-style: normal;
+  src: url("../public/assets/annonce.ttf") format('truetype');
+}
+
+.font-primary { font-family: 'Annonce', sans-serif; }
+.font-secondary { font-family: 'Montserrat', sans-serif; }
+
+#root {
+  background-image: url('../public/assets/background.jpg');
+  background-size: cover;
+}
+
+.navbar {
+  position: absolute;
+  width: 100%;
+
+  .btn-sm {
+    border-radius: 15px
+  }
+}
+
+#hero {
+  height: 100vh;
+  width: 100vw;
+
+  #hero-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    margin: auto;
+
+    #hero-title {
+      font-size: 3vw;
+    }
+
+    #hero-btn {
+      background-color: $myblue;
+      border-color: $myblue;
+      font-weight: 500;
+    }
+  }
+}
+
+#about {
+  background-image: linear-gradient(transparent, white 40%);
+  #about-title { font-size: 2.7vw; }
+}
+
+
+@media (max-width: 922px) {
+  #root {
+    background-size: 1080px;
+    background-position: top;
+  }
+
+  #hero {
+    height: fit-content;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+    #hero-container { width: 100%; }
+    #hero-title { font-size: 1.8rem !important; }
+  }
+
+  #about {
+    #about-title { font-size: 1.5rem; }
+  }
+}

@@ -1,9 +1,14 @@
+import About from "./AboutComponent";
+import Header from "./HeaderComponent";
+import Hero from "./HeroComponent";
 
 function Main () {
     return (
-        <div>
-            Hola
-        </div>
+        <>
+        <Header />
+        <Hero />
+        <About />
+        </>
     )
 }
 
